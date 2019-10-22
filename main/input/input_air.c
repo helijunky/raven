@@ -58,7 +58,8 @@ static void input_air_start(input_air_t *input_air)
     air_radio_set_sync_word(radio, air_sync_word(input_air->air.pairing.key));
     air_freq_table_init(&input_air->air.freq_table, input_air->air.pairing.key, center_freq);
     // TODO: RX used 17dBm fixed power
-    air_radio_set_tx_power(radio, 17);
+    //air_radio_set_tx_power(radio, 17);
+    air_radio_set_tx_power(radio, 14); // Schweiz: 14dBm
     input_air_update_air_mode(input_air);
     air_radio_sleep(radio);
     air_radio_set_payload_size(radio, sizeof(air_tx_packet_t));

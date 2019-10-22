@@ -138,7 +138,8 @@ static void rc_data_initialize(rc_t *rc)
         rmp_set_name(rc->rmp, telemetry_get_str(rc_data_get_downlink_telemetry(&rc->data, TELEMETRY_ID_CRAFT_NAME), TELEMETRY_ID_CRAFT_NAME));
 
         (void)TELEMETRY_SET_U8(&rc->data, TELEMETRY_ID_RX_ACTIVE_ANT, 1, time_micros_now());
-        (void)TELEMETRY_SET_I8(&rc->data, TELEMETRY_ID_RX_RF_POWER, 20, time_micros_now());
+        //(void)TELEMETRY_SET_I8(&rc->data, TELEMETRY_ID_RX_RF_POWER, 20, time_micros_now());
+        (void)TELEMETRY_SET_I8(&rc->data, TELEMETRY_ID_RX_RF_POWER, 14, time_micros_now()); // dies beinflusst nur die Anzeige in der Telemetrie. Echte Powersetting in input/input_air.ch Zeile 61
 
         break;
     }
